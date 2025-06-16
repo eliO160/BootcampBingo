@@ -13,6 +13,7 @@ function loadBoxes() {
         else {
             box.textContent = "Free space!"; 
         }
+        box.dataset.index = count;
         container.appendChild(box);
         count++;
     }
@@ -23,7 +24,7 @@ function clickBoxes () {
     boxes.forEach((box) => {
         box.addEventListener('click', () => {
             box.style.backgroundColor = 'green';
-            console.log("Box clicked!");
+            console.log("Box clicked! ${box.dataset.index}");
         });
     });
         
